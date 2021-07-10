@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>人脸图片上传</title>
+	<?php session_start();if(!$_SESSION['id']) {
+	echo "<script>alert('会话已过期,请重新登录');window.location.href='login.html'</script>";exit(0);}?>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="static/css/admin.css">
+	<link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/font-awesome/4.6.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="static/layui/css/layui.css">
+	<link rel="stylesheet" type="text/css" href="static/css/global_style.css">
+	<link rel="Shortcut Icon" href="ico.ico">
+</head>
+<body>
+	<div class="tm-tpl tpl-white-hn small-item" style-name="tpl-white-hn">
+		<!--导航栏-->
+		<div class="tpl-left-sidebar">
+			<ul>
+				<li class="logo">
+					<img class="user-upload" src="static/images/4a251abe82900c79733daa753664f701.jpg" alt="admin" title="admin">
+					<span></span>
+				</li>
+				<li class="nav-item">
+					<a href="stu1.php" class="a-item"><i class="fa fa-home nav-icon"></i><span>首页</span></a>
+				</li>
+				<li class="nav-item">
+					<a href="关于我们.html" class="a-item"><i class="fa fa-users nav-icon"></i><span>关于我们</span></a>
+				</li>
+			</ul>
+		</div>
+		<!--右侧内容-->
+		<div class="tpl-right-item">
+			<div class="tpl-body">
+				<!--头部-->
+				<div class="tpl-header">
+					<div class="tpl-header-fluid">
+						<div class="tpl-userbar">
+							<ul>
+								<li><a href="javascript:;" class="dashboard" tag="style-bar"><i class="fa fa-dashboard"></i></a></li>
+								<li><a href="exit.php" class="logout"><i class="fa fa-power-off"></i>退出登录</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+                     <div class="tpl-content"  >
+						  	
+					
+						<h2> 请您上传您截取的人脸</h2>
+					<!-- enctype="mulipart/form-data"属性是指以二进制方式进行数据传输 
+					传输文件需要设置-->
+					<form action="upload.php" method="post" enctype="multipart/form-data">
+					<input type="file" name="file">
+					<input type="submit" name="submit" value="提交" style="blue">		
+	        			</form>
+					</div>
+
+
